@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roleta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="border">
+    <img class="marcador" src="./img/marcador.png" alt="">
+    <img src="./img/estrutura-roleta.png" alt="">
+    <div id="wrapper">
+      <div id="wheel">
+        <div id="inner-wheel">
+          <div class="sec">
+            <div class="discountPercent">
+              <div class="percentOff">
+                <p>9</p>
+                <span><b>%</b> <br> OFF</span>
+              </div>
+            </div>
+          </div>
+          <div class="sec">
+            <div class="discountPercent">
+              <div class="percentOff">
+                <p>6</p>
+                <span><b>%</b> <br> OFF</span>
+              </div>
+            </div>
+          </div>
+          <div class="sec">
+            <div class="discountPercent">
+              <div class="percentOff">
+                <p>8</p>
+                <span><b>%</b> <br> OFF</span>
+              </div>
+            </div>
+          </div>
+          <div class="sec">
+            <div class="discountPercent">
+              <div class="percentOff">
+                <p>5</p>
+                <span><b>%</b> <br> OFF</span>
+              </div>
+            </div>
+          </div>
+          <div class="sec">
+            <div class="discountPercent">
+              <div class="percentOff">
+                <p>7</p>
+                <span><b>%</b> <br> OFF</span>
+              </div>
+            </div>
+          </div>
+          <div class="sec">
+            <div class="discountPercent a">
+              <div class="percentOff">
+                <p>10</p>
+                <span><b>%</b> <br> OFF</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="spin">
+          <div id="inner-spin"></div>
+        </div>
+        
+        <div id="shine"></div>
+      </div>
+      <div id="txt"></div>
+    </div>
+    <button class="spin" onclick="myfunction()"></button>
+  </div>
+
+
+  <script>
+    function myfunction(){
+    var x = 1024;
+    var y = 9999;
+    
+    var deg = Math.floor(Math.random() * (x - y)) + y;
+    
+    document.getElementById('inner-wheel').style.transform = "rotate("+deg+"deg)";
+    
+    var element = document.getElementById('wheel');
+    element.classList.remove('animate');
+    setTimeout(function(){
+        element.classList.add('animate');
+    
+    }, 3000);
+    }
+    
+  </script>
+</body>
+
+</html>
